@@ -1,0 +1,85 @@
+:root {
+  --primary: #e69b0f;
+  --bg: #010101;
+  --second: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 1000px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 7%;
+  font-weight: 800;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--second);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-logo {
+  color: var(--second);
+  font-size: 28px;
+  font-style: italic;
+}
+
+.navbar .navbar-nav a {
+  margin: 0 10px;
+  font-size: 18px;
+  color: var(--second);
+  display: inline-block;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.hero {
+    min-height: 100vh;
+    background-image: url(../IMG/Banner\ Promo\ Dimsum\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .hero-img {
+    width: 100%;
+
+}
