@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 1000px;
 }
 
@@ -72,14 +72,61 @@ body {
   transform: scaleX(0.5);
 }
 
+/* Carosel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
 
-/* banner */
-.banner {
-    min-height: 100vh;
-    background-image: url(../IMG/Banner\ Promo\ Dimsum\ 2.png);
-    background-repeat: no-repeat;
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 600px; /* Sesuaikan tinggi carousel */
     background-size: cover;
     background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Teks di bagian bawah */
+    justify-content: center;
+}
+
+.carousel-text {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Gradien latar belakang */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translateY(100%); /* Awalnya teks tersembunyi di bawah */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item:hover .carousel-text {
+    transform: translateY(0); /* Munculkan teks saat hover */
+}
+
+/* Animasi teks muncul */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.carousel-item.active .carousel-text {
+    animation: slideUp 0.5s ease-in-out forwards; /* Animasi muncul saat aktif */
 }
 
 
@@ -89,7 +136,7 @@ body {
   gap: 20px;
 }
 
-.menu .menu-img{
+.menu .menu-img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -99,20 +146,28 @@ body {
 .menu .menu-img .menu-card {
   padding: 20px;
   margin: 16px;
+  background-color: var(--second);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menu .menu-img .menu-card .menu-card-img{
+.menu .menu-img .menu-card .menu-card-img {
   width: 250px;
   height: 250px;
   border-radius: 20px;
 }
 
 .menu .menu-img .menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* .menu .menu-img .menu-card:hover {
   background-color: var(--second);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
-}
-
+} */
 
 /* Contact */
 .contact {
@@ -137,7 +192,7 @@ body {
 
 .contact .row form {
   flex: 1 1 45rem;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
@@ -152,8 +207,8 @@ body {
 
 .contact .row form .input-group input {
   width: 100%;
-  padding: 2rem;
-  font-size: 1.7rem;
+  padding: 1.4rem;
+  font-size: 1.4rem;
   background: none;
   color: white;
 }
@@ -167,7 +222,6 @@ body {
   background-color: var(--primary);
   cursor: pointer;
 }
-
 
 /* Footer */
 
@@ -187,7 +241,7 @@ footer .socials a {
   margin: 1rem;
 }
 
-footer .socials a:hover, 
+footer .socials a:hover,
 footer .links a:hover {
   color: var(--bg);
 }
