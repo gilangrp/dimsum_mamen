@@ -41,16 +41,35 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        .form-group input {
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
         }
-        .form-group input:focus {
+        .form-group input:focus, .form-group textarea:focus {
             border-color: #007bff;
             outline: none;
+        }
+        .delivery-options {
+            margin-top: 20px;
+        }
+        .delivery-options h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .delivery-options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .delivery-options input {
+            margin-right: 10px;
+        }
+        .address-group {
+            display: none;
+            margin-top: 15px;
         }
         .payment-methods {
             margin-top: 20px;
@@ -141,6 +160,21 @@
                     <label for="phone">Nomor Telepon</label>
                     <input type="tel" id="phone" placeholder="Masukkan nomor telepon" required>
                 </div>
+                <div class="delivery-options">
+                    <h3>Pilihan Pengiriman</h3>
+                    <label>
+                        <input type="radio" name="delivery" value="pickup" required> Ambil di Tempat
+                    </label>
+                    <label>
+                        <input type="radio" name="delivery" value="delivery" required> Diantar Kurir
+                    </label>
+                    <div class="address-group" id="addressGroup">
+                        <div class="form-group">
+                            <label for="address">Alamat Pengiriman</label>
+                            <textarea id="address" placeholder="Masukkan alamat lengkap"></textarea>
+                        </div>
+                    </div>
+                </div>
                 <div class="payment-methods">
                     <h3>Metode Pembayaran</h3>
                     <label>
@@ -171,5 +205,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Menampilkan atau menyembunyikan input alamat berdasarkan pilihan pengiriman
+        const deliveryOptions = document.querySelectorAll('input[name="delivery"]');
+        const addressGroup = document.getElementById('addressGroup');
+
+        deliveryOptions.forEach(option => {
+            option.addEventListener('change', function() {
+                if (this.value === 'delivery') {
+                    addressGroup.style.display = 'block';
+                } else {
+                    addressGroup.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
