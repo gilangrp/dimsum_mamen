@@ -94,16 +94,6 @@ body {
     margin-bottom: 20px;
 }
 
-.cta-promo {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: var(--primary);
-    color: var(--second);
-}
-
-.cta-promo h2 {
-    margin-bottom: 20px;
-}
 
 .cta-button {
     background-color: var(--bg);
