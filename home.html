@@ -77,7 +77,6 @@
         </div>
     </div>
 
-    <!-- Footer Start -->
     <footer>
         <div class="socials">
             <a href="#"><i data-feather="instagram"></i></a>
@@ -96,33 +95,25 @@
             <p><a href="">Dimsum Mamen</a>. | &copy; 2025</p>
         </div>
     </footer>
-    <!-- Footer End -->
 
     <script>
         let index = 0;
         const carouselItems = document.querySelectorAll(".carousel-item");
 
         function showNextImage() {
-            // Sembunyikan teks di item sebelumnya
             carouselItems[index].classList.remove("active");
 
-            // Pindah ke item berikutnya
             index = (index + 1) % carouselItems.length;
 
-            // Tampilkan teks di item baru
             carouselItems[index].classList.add("active");
 
-            // Geser carousel
             document.querySelector(".carousel").style.transform = `translateX(${-index * 100}%)`;
         }
 
-        // Set interval untuk auto-slide
         setInterval(showNextImage, 5000);
 
-        // Aktifkan teks di item pertama saat halaman dimuat
         carouselItems[0].classList.add("active");
 
-        // Footer
         feather.replace();
     </script>
 </body>

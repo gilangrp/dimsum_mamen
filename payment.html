@@ -181,7 +181,6 @@
             background-color: #0056b3;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -313,7 +312,7 @@
     </div>
 
     <script>
-        // Script untuk menampilkan/menyembunyikan alamat pengiriman
+
         const deliveryOptions = document.querySelectorAll('input[name="delivery"]');
         const addressGroup = document.getElementById('addressGroup');
 
@@ -327,14 +326,12 @@
             });
         });
 
-        // Script untuk menampilkan modal pembayaran sukses
         const paymentForm = document.getElementById('paymentForm');
         const successModal = document.getElementById('successModal');
 
         paymentForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Mencegah form dari pengiriman default
+            event.preventDefault(); 
 
-            // Cek apakah semua field sudah terisi
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
@@ -342,12 +339,10 @@
             const payment = document.querySelector('input[name="payment"]:checked').value;
 
             if (name && email && phone && delivery && payment) {
-                // Tampilkan modal
                 successModal.style.display = 'flex';
             }
         });
 
-        // Tutup modal jika mengklik di luar modal
         window.addEventListener('click', function (event) {
             if (event.target === successModal) {
                 successModal.style.display = 'none';

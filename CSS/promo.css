@@ -87,32 +87,32 @@ body {
 
 .carousel-item {
     min-width: 100%;
-    height: 600px; /* Sesuaikan tinggi carousel */
+    height: 600px;
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
-    align-items: flex-end; /* Teks di bagian bawah */
+    align-items: flex-end;
     justify-content: center;
 }
 
 .carousel-text {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Gradien latar belakang */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); 
     color: white;
     padding: 20px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    transform: translateY(100%); /* Awalnya teks tersembunyi di bawah */
+    transform: translateY(100%); 
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item:hover .carousel-text {
-    transform: translateY(0); /* Munculkan teks saat hover */
+    transform: translateY(0);
 }
 
 /* Animasi teks muncul */
@@ -126,11 +126,9 @@ body {
 }
 
 .carousel-item.active .carousel-text {
-    animation: slideUp 0.5s ease-in-out forwards; /* Animasi muncul saat aktif */
+    animation: slideUp 0.5s ease-in-out forwards;
 }
 
-
-/* menu */
 .menu {
   padding: 8rem 7% 1.4rem;
   gap: 20px;
@@ -163,13 +161,7 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* .menu .menu-img .menu-card:hover {
-  background-color: var(--second);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-} */
 
-/* Contact */
 .contact {
   padding: 8rem 7% 1.4rem;
 }
@@ -222,8 +214,6 @@ body {
   background-color: var(--primary);
   cursor: pointer;
 }
-
-/* Footer */
 
 footer {
   background-color: var(--primary);
