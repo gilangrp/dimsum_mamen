@@ -35,28 +35,19 @@
     <!-- carousel Section Star -->
     <div class="carousel-container">
         <div class="carousel">
-            <div class="carousel-item"
-                style="background-image: url(IMG/Banner\ Promo\ Dimsum\ 2.png);">
+            <div class="carousel-item" style="background-image: url(IMG/Banner\ Promo\ Dimsum\ 2.png);">
                 <div class="carousel-text">Promo 1: Diskon 10% untuk semua menu!</div>
             </div>
-            <!-- <div class="carousel-item"
-                style="background-image: url('https://www.unileverfoodsolutions.co.id/dam/global-ufs/mcos/SEA/calcmenu/recipes/ID-recipes/chicken-&-other-poultry-dishes/prawn---chicken-shumai-dimsum/Dimsum1260-700.jpg');">
-                <div class="carousel-text">Promo 2: Gratis minuman untuk pembelian di atas Rp 100.000!</div>
-            </div>
-            <div class="carousel-item"
-                style="background-image: url('https://media.istockphoto.com/id/626007330/id/foto/cina-dim-sum-dalam-kotak-kukus-bambu.jpg?s=612x612&w=0&k=20&c=L6kPUhSziz0n5UifRIZAiUCp4SSb1bPTXewMZGvTFe8=');">
-                <div class="carousel-text">Promo 3: Beli 1 Gratis 1 setiap hari Jumat!</div>
-            </div> -->
         </div>
     </div>
     <!-- carousel Section End -->
 
-     <!-- Promo Header Section -->
-     <div class="promo-header">
+    <!-- Promo Header Section -->
+    <div class="promo-header">
         <h2>Promo Spesial</h2>
         <p>Nikmati berbagai penawaran menarik dari Dimsum Mamen. Promo terbatas, buruan pesan sebelum kehabisan!</p>
         <div class="countdown">
-            <i class="fas fa-clock"></i> Promo berakhir dalam: 
+            <i class="fas fa-clock"></i> Promo berakhir dalam:
             <span id="countdown-timer">03:23:45:12</span>
         </div>
     </div>
@@ -148,6 +139,21 @@
     </footer>
     <!-- Footer End -->
 
+    <!-- Modal Klaim Kupon -->
+    <div class="modal" id="couponModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">🎉</div>
+            <h3>Kupon Berhasil Diklaim!</h3>
+            <div class="coupon-code">
+                <p>Gunakan kode promo:</p>
+                <div class="code">DIMSUMGRATIS</div>
+            </div>
+            <p class="modal-note">* Berlaku untuk pembelian minimal Rp 100.000</p>
+            <button class="btn-modal">Tutup</button>
+        </div>
+    </div>
+
     <!-- Feather Icon -->
     <script>
         feather.replace();
@@ -155,18 +161,48 @@
             const endDate = new Date("March 30, 2025 23:59:59").getTime();
             const now = new Date().getTime();
             const distance = endDate - now;
-            
+
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById("countdown-timer").innerHTML = 
+
+            document.getElementById("countdown-timer").innerHTML =
                 `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
         }
-        
+
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // Modal Klaim Kupon
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('couponModal');
+            const claimBtn = document.querySelector('.btn-offer');
+            const closeModal = document.querySelector('.close-modal');
+            const btnModal = document.querySelector('.btn-modal');
+
+            claimBtn.addEventListener('click', function () {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            });
+
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            btnModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
     </script>
 
 </body>
