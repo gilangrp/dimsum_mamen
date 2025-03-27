@@ -165,6 +165,26 @@ body {
   color: black;
 }
 
+.order-btn {
+    display: block; /* Membuat tombol full width */
+    width: 100%; /* Lebar penuh */
+    padding: 10px 0; /* Tambahkan jarak vertikal */
+    margin-top: 18px;
+    text-align: center; /* Pusatkan teks */
+    background-color: #FFA500; /* Warna tombol */
+    color: white; /* Warna teks */
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px; /* Membuat sudut membulat */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.order-btn:hover {
+    background-color: #e69500; /* Warna saat hover */
+}
+
 
 .contact {
   padding: 8rem 7% 1.4rem;
