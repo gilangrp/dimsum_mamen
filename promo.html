@@ -51,6 +51,17 @@
     </div>
     <!-- carousel Section End -->
 
+     <!-- Promo Header Section -->
+     <div class="promo-header">
+        <h2>Promo Spesial</h2>
+        <p>Nikmati berbagai penawaran menarik dari Dimsum Mamen. Promo terbatas, buruan pesan sebelum kehabisan!</p>
+        <div class="countdown">
+            <i class="fas fa-clock"></i> Promo berakhir dalam: 
+            <span id="countdown-timer">03:23:45:12</span>
+        </div>
+    </div>
+
+
     <!-- Menu Start -->
     <section class="menu">
         <div class="menu-img">
@@ -107,38 +118,6 @@
     </section>
     <!-- Menu End -->
 
-
-    <!-- Contact Start -->
-    <section id="contact" class="contact">
-        <div class="row">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d132360.51626889256!2d107.64071791969951!3d-6.9023101544237955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1738385436813!5m2!1sid!2sid"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-            <form action="" class="icon">
-                <div class="input-group">
-                    <i data-feather="user"></i>
-                    <input type="text" placeholder="nama">
-                </div>
-                <div class="input-group">
-                    <i data-feather="mail"></i>
-                    <input type="text" placeholder="email">
-                </div>
-                <div class="input-group">
-                    <i data-feather="phone"></i>
-                    <input type="text" placeholder="no hp">
-                </div>
-                <div>
-                    <button type="submit" class="btn">
-                        kirim pesan
-                    </button>
-                </div>
-
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact End -->
-
     <!-- Footer Start -->
     <footer>
         <div class="socials">
@@ -163,6 +142,22 @@
     <!-- Feather Icon -->
     <script>
         feather.replace();
+        function updateCountdown() {
+            const endDate = new Date("March 30, 2025 23:59:59").getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown-timer").innerHTML = 
+                `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 
 </body>
