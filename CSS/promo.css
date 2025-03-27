@@ -300,3 +300,42 @@ footer .credit a {
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* Special Offer Banner */
+.special-offer {
+  background: linear-gradient(135deg, var(--primary), #f8c537);
+  padding: 2rem 7%;
+  margin: 3rem 7%;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.offer-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.offer-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-offer {
+  background-color: white;
+  color: var(--primary);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-offer:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
