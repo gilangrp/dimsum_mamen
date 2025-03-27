@@ -161,6 +161,10 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.menu-card-title {
+  color: black;
+}
+
 
 .contact {
   padding: 8rem 7% 1.4rem;
